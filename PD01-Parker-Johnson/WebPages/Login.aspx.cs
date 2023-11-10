@@ -15,9 +15,6 @@ namespace PD01_Parker_Johnson.WebPages
             if(!IsPostBack) 
             { 
 
-                TextBox txtUserEmail = Login1.FindControl("UserName") as TextBox;
-                TextBox txtPassword = Login1.FindControl("Password") as TextBox;
-
                 if (Request.Cookies["rememberMe"] != null)
                 {
                     string cookieEmail = Request.Cookies["rememberMe"]["UserEmail"];
@@ -32,10 +29,6 @@ namespace PD01_Parker_Johnson.WebPages
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            TextBox txtUserEmail = Login1.FindControl("txtUserEmail") as TextBox;
-            TextBox txtPassword = Login1.FindControl("txtPassword") as TextBox;
-            CheckBox RememberMe = Login1.FindControl("RememberMe") as CheckBox;
-
             string email = txtUserEmail.Text;
             string pass = txtPassword.Text;
 
