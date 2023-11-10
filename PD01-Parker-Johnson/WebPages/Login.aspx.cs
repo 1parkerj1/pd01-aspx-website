@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PD01_Parker_Johnson.App_Code.BLL;
@@ -50,6 +51,8 @@ namespace PD01_Parker_Johnson.WebPages
                 else
                 {
                 }
+
+                FormsAuthentication.RedirectFromLoginPage(email, true);
 
                 Response.Redirect("~/WebPages/Index.aspx");
             }
