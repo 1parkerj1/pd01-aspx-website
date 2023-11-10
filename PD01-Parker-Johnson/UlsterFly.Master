@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UlsterFly.master.cs" Inherits="PD01_Parker_Johnson.UlsterFly" %>
+
+<!DOCTYPE html>
+
+<html>
+
+    <head runat="server">
+        <title></title>
+
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <link href="Styles/layout.css" rel="stylesheet" />
+
+
+    </head>
+
+    <body class="master-background">
+        <form id="form1" runat="server">
+
+            <nav class="navbar navbar-expand-lg navcolor">
+                <div class="container-fluid navcolor">
+
+
+                    <a class="navbar-brand nav-title nav-fix" href="Index.aspx">
+                        <asp:Image class="nav-logo" ID="imgLogo" runat="server" ImageUrl="~/Images/logo.png" />
+                        Ulster Fly
+                    </a>
+                    
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" runat="server">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+                            <li class="nav-item nav-font">
+                                <a class="nav-link" href="#" runat="server">Licenses</a>
+                            </li>
+
+                            <li class="nav-item nav-font">
+                                <a class="nav-link" href="#" runat="server">Tackle Tips</a>
+                            </li>
+
+                            <li class="nav-item nav-font">
+                                <a class="nav-link" href="#" runat="server">Fisheries</a>
+                            </li>
+
+                            <li class="nav-item nav-font">
+                                <asp:LinkButton id="Login" class="nav-link" runat="server" OnClick="Login_Click">Login</asp:LinkButton>
+                            </li>
+
+                            <li id="adminElement" class="nav-item dropdown nav-font" runat="server">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Admin Menu</a>
+
+                                <ul class="dropdown-menu navcolor">
+
+                                    <li><a class="dropdown-item nav-drop" href="#">Hello 1</a></li>
+                                    <li><a class="dropdown-item nav-drop" href="#">Hello 2</a></li>
+
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        
+            <div class="container-fluid navcolor foot-font foot-flex foot">
+                <footer class="py-3 navcolor foot-font">
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                        <li class="nav-item"><a href="~/WebPages/Index.aspx" class="nav-link px-2 text-muted" runat="server">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted" runat="server">Licenses</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted" runat="server">Tackle Tips</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted" runat="server">Fisheries</a></li>
+                    </ul>
+                    <p class="text-center text-muted">&copy;2023 Ulster Fly</p>
+                </footer>
+            </div>
+        </form>
+    </body>
+
+</html>

@@ -1,0 +1,169 @@
+﻿/*
+    Onyx: ##3C3C3B
+    Yale: #003E7C
+    Slate: #35605A
+    Columbia: #BCD3F2
+    Pearl: #E6E1C5
+    --------------------
+    Gold: #ECA400
+    Cream: #F7F0BE
+    Dye: #27476E
+    Blue:#001D4A
+
+*/
+/* NAV MEDIA QUERIES */
+.nav-logo {
+    max-width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 991px) {
+    .nav-logo {
+        width: 40%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 377px) {
+    .nav-logo {
+        width: 30%;
+        height: auto;
+    }
+}
+
+.nav-fix {
+    
+}
+
+
+
+
+/* NAV/FOOTER STYLING */
+.nav-title{
+    font-family:monospace;
+    font-size: xx-large;
+    color: black;
+}
+
+.navcolor {
+    background-color: #ECA400;
+}
+
+.nav-font {
+    font-family: monospace;
+    font-size: medium;
+    color: black;
+}
+    a:hover {
+        font-weight: bold;
+    }
+    a:visited {
+        font-family: monospace;
+        font-size: medium;
+        color: black;
+    }
+
+.nav-drop {
+    font-family: monospace;
+    font-size: medium;
+    color: black;
+}
+
+    .nav-drop:hover {
+        background-color: #F7F0BE;
+    }
+
+.foot {
+    margin-top: auto;
+}
+
+.foot-fix {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.foot-font {
+    font-family: monospace;
+    font-size: large;
+    color: black;
+}
+    .foot:hover {
+        font-weight: bold;
+    }
+
+    .foot:visited {
+        font-family: monospace;
+        font-size: large;
+        color: black;
+    }
+
+/* PAGES/MASTER STYLING*/
+.master-background {
+    background-color: #27476E
+}
+
+.page-background {
+    background-color: #27476E
+}
+
+.page-font {
+    font-family: monospace;
+    color: white;
+}
+
+/* LOGIN PAGE */
+
+.login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: monospace;
+}
+
+.login-wrapper {
+    width: auto;
+    padding: 10%;
+    border: 1px solid #001D4A;
+    border-radius: 15px;
+}
+
+.login-font {
+    font-family: monospace;
+    color: white;
+}
+
+.login-form {
+    font-family: monospace;
+    color: black;
+    background-color: #F7F0BE;
+    border: 1px solid #001D4A;
+}
+
+.login-btn {
+    font-family: monospace;
+    color: black;
+    background-color: #F7F0BE;
+    border-radius: 5px;
+    border: 1px solid #001D4A
+}
+
+.login-head {
+    font-family: monospace;
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+}
+
+.login-reg {
+    font-size: small;
+}
+    .login-reg:hover {
+        cursor: pointer;
+    }
+    .login:visited {
+        font-family: monospace;
+        color: white;
+    }
