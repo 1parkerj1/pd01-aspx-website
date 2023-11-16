@@ -175,3 +175,7 @@ H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-John
 H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.csproj.CopyComplete
 H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.dll
 H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.pdb
+E:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\bin\Newtonsoft.Json.dll
+E:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\bin\OpenWeatherMap.Standard.dll
+H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\bin\OpenWeatherMap.Standard.dll
+H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\bin\Newtonsoft.Json.dll

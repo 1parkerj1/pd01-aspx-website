@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PD01_Parker_Johnson.App_Code.BLL;
@@ -14,9 +15,6 @@ namespace PD01_Parker_Johnson.WebPages
         {
             if(!IsPostBack) 
             { 
-
-                TextBox txtUserEmail = Login1.FindControl("UserName") as TextBox;
-                TextBox txtPassword = Login1.FindControl("Password") as TextBox;
 
                 if (Request.Cookies["rememberMe"] != null)
                 {
@@ -32,9 +30,6 @@ namespace PD01_Parker_Johnson.WebPages
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            TextBox txtUserEmail = Login1.FindControl("txtUserEmail") as TextBox;
-            TextBox txtPassword = Login1.FindControl("txtPassword") as TextBox;
-            CheckBox RememberMe = Login1.FindControl("RememberMe") as CheckBox;
 
             string email = txtUserEmail.Text;
             string pass = txtPassword.Text;
@@ -54,10 +49,11 @@ namespace PD01_Parker_Johnson.WebPages
                     rememberMe.Expires = DateTime.Now.AddMonths(1);
                     Response.Cookies.Add(rememberMe);
                 }
+
                 else
                 {
                 }
-
+                FormsAuthentication.RedirectFromLoginPage(email, true);
                 Response.Redirect("~/WebPages/Index.aspx");
             }
             else
