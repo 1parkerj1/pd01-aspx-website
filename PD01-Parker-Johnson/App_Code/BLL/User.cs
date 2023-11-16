@@ -11,8 +11,9 @@ namespace PD01_Parker_Johnson.App_Code.BLL
     public class User
     {
 
-        private int UserID, UserAge;
-        private string UserName, UserPass, UserEmail, UserPhone, UserLicense;
+        private int UserID;
+        private string UserName, UserPass, UserEmail, UserLicenseType;
+        private DateTime userDOB;
 
         public User(){ }
 
@@ -52,39 +53,30 @@ namespace PD01_Parker_Johnson.App_Code.BLL
             return this.UserEmail;
         }
 
-        public void setUserPhone(string UserPhone)
-        {
-            this.UserPhone = UserPhone;
-        }
-        public string getUserPhone() 
-        { 
-            return this.UserPhone; 
-        }
-
         public void setUserLicense(string UserLicense)
         {
-            this.UserLicense = UserLicense;
+            this.UserLicenseType = UserLicense;
         }
         public string getUserLicense()
         {
-            return this.UserLicense;
+            return this.UserLicenseType;
+        }
+    
+        public void setUserDOB(DateTime userDOB)
+        {
+            this.userDOB = userDOB;
+        }
+        public DateTime getUserDOB()
+        {
+            return this.userDOB;
         }
 
-        public void setUserAge(int UserAge)
-        {
-            this.UserAge = UserAge;
-        }
-        public int getUserAge()
-        {
-            return (int) this.UserAge;
-        }
-
-        public void newUser()
+        public void newUser(string UserEmail, string UserName, string UserPass)
         {
             // call data access method to create a new user
             // the userID from the database is used for the object
 
-            this.UserID = DataAccess.DALuserReg(this.UserEmail, this.UserName, this.UserPass);
+            this.UserID = DataAccess.DALuserReg(UserEmail, UserName, UserPass);
         }
 
         public bool removeUser()
@@ -98,13 +90,18 @@ namespace PD01_Parker_Johnson.App_Code.BLL
             return user;
         }
 
-        public void rememberMeCookie(string UserEmail, string UserPass, bool rememberMe)
+        public bool emailValidate(string Email)
         {
-            if(rememberMe)
-            {
-                
-            }
+            DataAccess da = new DataAccess();
+            return da.DALemailValidate(Email);
         }
+
+        public void addLicenceInfo(string UserEmail, DateTime UserDOB, string UserAddress, string UserLicenceType, DateTime UserExpiry)
+        {
+            LicenceInfo licence = new LicenceInfo();
+            licence.licenceInfo(UserEmail, UserDOB, UserAddress, UserLicenceType, UserExpiry);
+        }
+
 
 
     }

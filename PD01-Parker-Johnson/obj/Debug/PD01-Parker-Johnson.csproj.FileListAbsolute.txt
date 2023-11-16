@@ -175,62 +175,7 @@ H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-John
 H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.csproj.CopyComplete
 H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.dll
 H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.pdb
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\PD01-Parker-Johnson.dll.config
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\PD01-Parker-Johnson.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\PD01-Parker-Johnson.pdb
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\csc.exe
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\csc.exe.config
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\csc.rsp
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\csi.exe
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\csi.exe.config
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\csi.rsp
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.AppContext.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Console.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.IO.Compression.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Net.Http.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Net.Sockets.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.ValueTuple.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Xml.XPath.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\vbc.exe
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\vbc.exe.config
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\vbc.rsp
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\VBCSCompiler.exe
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.csproj.CoreCompileInputs.cache
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.csproj.CopyComplete
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.dll
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.pdb
-C:\Users\rhysb\Desktop\FDSE Projects\Parkers\PD\pd01\PD01-Parker-Johnson\obj\Debug\PD01-Parker-Johnson.csprojAssemblyReference.cache
+E:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\bin\Newtonsoft.Json.dll
+E:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\bin\OpenWeatherMap.Standard.dll
+H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\bin\OpenWeatherMap.Standard.dll
+H:\Platform development\PD assignment 1\PD01-Parker-Johnson-SLN\PD01-Parker-Johnson\bin\Newtonsoft.Json.dll

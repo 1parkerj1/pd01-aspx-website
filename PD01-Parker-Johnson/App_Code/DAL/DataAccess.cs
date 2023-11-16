@@ -48,12 +48,12 @@ namespace PD01_Parker_Johnson.App_Code.DAL
         {
             OleDbConnection regConn = openConnection();
 
-            string regSQL = "INSERT INTO Users (UserEmail, UserName, UserPass) VALUES('@UserEmail', '@UserName', '@UserPass')";
+            string regSQL = "INSERT INTO Users (UserEmail, UserName, UserPass) VALUES('" + UserEmail + "', '" + UserName + "', ' " + UserPass + "')";
             OleDbCommand cmd = new OleDbCommand(regSQL, regConn);
 
-            cmd.Parameters.AddWithValue("@UserEmail", UserEmail);
-            cmd.Parameters.AddWithValue("@UserName", UserName);
-            cmd.Parameters.AddWithValue("@UserPass", UserPass);
+            //cmd.Parameters.AddWithValue("@UserEmail", UserEmail);
+            //cmd.Parameters.AddWithValue("@UserName", UserName);
+            //cmd.Parameters.AddWithValue("@UserPass", UserPass);
 
             cmd.ExecuteNonQuery();
             cmd.CommandText = "SELECT @@IDENTITY";
@@ -75,7 +75,7 @@ namespace PD01_Parker_Johnson.App_Code.DAL
 
             closeConnection(delConn);
 
-            if (count == 1 )
+            if (count == 1)
             {
                 return true;
             }
@@ -97,13 +97,13 @@ namespace PD01_Parker_Johnson.App_Code.DAL
                 {
                     string loginSQL = "SELECT * FROM Users WHERE UserEmail = @UserEmail AND UserPass = @UserPass";
                     using (OleDbCommand cmd = new OleDbCommand(loginSQL, loginConn))
-                    { 
+                    {
                         cmd.Parameters.AddWithValue("@UserEmail", UserEmail);
                         cmd.Parameters.AddWithValue("@UserPass", UserPass);
 
                         using (OleDbDataReader read = cmd.ExecuteReader())
                         {
-                            if(read.Read())
+                            if (read.Read())
                             {
                                 user = new User();
                                 user.setUserID(read.GetInt32(read.GetOrdinal("UserID")));
@@ -112,11 +112,11 @@ namespace PD01_Parker_Johnson.App_Code.DAL
                             }
                         }
                     }
-                } 
-                finally              
-                { 
+                }
+                finally
+                {
                     loginConn.Close();
-                    
+
                 }
             }
 
@@ -124,7 +124,41 @@ namespace PD01_Parker_Johnson.App_Code.DAL
 
         }
 
+        public bool DALemailValidate(string email)
+        {
+            OleDbConnection validateConn = openConnection();
+            bool emailExists = false;
+            int id = -1;
 
+            if (validateConn != null)
+            {
+                try
+                {
+                    string validateSQL = "SELECT * FROM Users WHERE UserEmail = '" + email + "'" ;
+                    using (OleDbCommand cmd = new OleDbCommand(validateSQL, validateConn))
+                    {
+                        using (OleDbDataReader read = cmd.ExecuteReader())
+                        {
+                            if (read.Read())
+                            {
+                                id = (read.GetInt32(read.GetOrdinal("UserID")));
+                            }
+                        }
+                    }
+                }
+                finally
+                {
+                    validateConn.Close();
+                }
+            }
+
+            if (id>-1)
+            {
+                emailExists = true;
+            }
+
+        return emailExists;
+        }
 
 
     }

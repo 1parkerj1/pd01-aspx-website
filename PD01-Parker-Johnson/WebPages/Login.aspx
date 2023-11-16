@@ -1,16 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UlsterFly.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="PD01_Parker_Johnson.WebPages.Login" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <div class="login">
         <div class="login-wrapper">
 
-            <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+            <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
                 <tr>
                     <td>
                         <table cellpadding="1">
-                                    
+
                             <tr>
                                 <td align="center" colspan="2" class="login-head">Log In</td>
                             </tr>
@@ -43,7 +44,7 @@
 
                             <tr>
                                 <td colspan="2">
-                                    <asp:HyperLink ID="HyperLink1" CssClass="login-reg login-font" runat="server">Create an account</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink1" CssClass="login-reg login-font" runat="server" NavigateUrl="~/WebPages/Register.aspx">Create an account</asp:HyperLink>
                                 </td>
                             </tr>
 
@@ -63,6 +64,7 @@
                     </td>
                 </tr>
             </table>
+
 
         </div>
     </div>

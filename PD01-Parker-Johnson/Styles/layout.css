@@ -31,11 +31,6 @@
     }
 }
 
-.nav-fix {
-    
-}
-
-
 
 
 /* NAV/FOOTER STYLING */
@@ -112,6 +107,23 @@
     color: white;
 }
 
+p {
+    font-family: monospace;
+    color: white;
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+    font-family: monospace;
+}
+
+h3 {
+    font-weight: bold;
+    color: white;
+    font-family: monospace;
+}
+
 /* LOGIN PAGE */
 
 .login {
@@ -167,3 +179,103 @@
         font-family: monospace;
         color: white;
     }
+
+/* INDEX PAGE */
+
+.weatherWrapper {
+    font-family: monospace;
+    color: white;
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 50%;
+    height: fit-content;
+}
+
+/* LICENSE PAGE */
+
+.table {
+    font-family: monospace;
+    font-size: 1em;
+    text-align: left;
+    width: 100%;
+    border: 2px solid black;
+    margin: 1% auto 1% auto;
+    background-color: #F7F0BE
+}
+
+
+.smolul {
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.bigul {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+
+}
+
+.link{
+    color: white;
+} 
+    .link:hover {
+      color:white;
+      
+    }
+    .link:visited {
+        color:white;
+    }
+
+.content {
+    width: 50%;
+    margin: 1% auto 1% auto;
+    display: block;
+    text-align: center;
+    align-content: center; 
+}
+
+.typeLabel {
+    font-family: monospace;
+    color: white;
+}
+
+@media only screen and (max-width: 991px) {
+    .table {
+        font-size: 0.7em;
+    }
+
+    .content {
+        width: 75%;
+    }
+
+    .smolul {
+        width: 75%
+    }
+}
+
+@media only screen and (max-width: 377px) {
+    .table {
+        font-size: 0.5em;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .smolul {
+        width: 100%
+    }
+}
+

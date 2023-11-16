@@ -30,6 +30,7 @@ namespace PD01_Parker_Johnson.WebPages
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
+
             string email = txtUserEmail.Text;
             string pass = txtPassword.Text;
 
@@ -48,12 +49,11 @@ namespace PD01_Parker_Johnson.WebPages
                     rememberMe.Expires = DateTime.Now.AddMonths(1);
                     Response.Cookies.Add(rememberMe);
                 }
+
                 else
                 {
                 }
-
                 FormsAuthentication.RedirectFromLoginPage(email, true);
-
                 Response.Redirect("~/WebPages/Index.aspx");
             }
             else
