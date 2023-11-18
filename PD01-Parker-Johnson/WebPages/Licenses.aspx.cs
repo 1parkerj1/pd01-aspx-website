@@ -51,6 +51,7 @@ namespace PD01_Parker_Johnson.WebPages
             int month = int.Parse(ddlMonth.SelectedValue);
             int year = int.Parse(ddlYear.SelectedValue);
             DateTime today = DateTime.UtcNow.Date;
+            lblSname.Text = today.ToString();
             DateTime nextYear = today.AddYears(1);
 
             //using todays date and 1 year to make the expiry date 1 year
@@ -161,5 +162,6 @@ namespace PD01_Parker_Johnson.WebPages
                 return false;
             }
         }
+
     }
 }
