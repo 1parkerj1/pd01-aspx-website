@@ -114,5 +114,11 @@ namespace PD01_Parker_Johnson.App_Code.BLL
             DataAccess da = new DataAccess();
             return da.DALuserValidate(UserEmail, UserPass);
         }
+
+        public bool licenceExits(string UserEmail)
+        {
+            LicenceInfo licence = new LicenceInfo();
+            return licence.licenceExists(UserEmail);
+        }
     }
 }

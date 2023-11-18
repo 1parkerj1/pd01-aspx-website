@@ -70,13 +70,23 @@ namespace PD01_Parker_Johnson.WebPages
                 lblFail.Text = "Email doesn't exist. Create an account.";
             }
             else
-            {   // validate email method to checkif the email has correct format
+            {   
+                // validate email method to checkif the email has correct format
                 if (validateEmail(email))
                 {
-                    user.addLicenceInfo(email, DOB, address, licence, expiry);
+                    if(user.licenceExits(email))
+                    {
+                        lblFail.Text = "Licence With this email already exists";
+                    }
+                    else 
+                    {
+                        // add info to database using dataaccess method
+                        user.addLicenceInfo(email, DOB, address, licence, expiry);
 
-                    // query string to transfer data to the liucence view page
-                    Response.Redirect("~/LicencePage/LicenceView.aspx?firstname=" + txtFname.Text + "&lastname=" + txtSname.Text + "&expirydate=" + nextYear.ToString() + "&address=" + txtAddress.Text + "&licence=" + licence.ToString());
+                        // query string to transfer data to the liucence view page
+                        Response.Redirect("~/LicencePage/LicenceView.aspx?firstname=" + txtFname.Text + "&lastname=" + txtSname.Text + "&expirydate=" + nextYear.ToString() + "&address=" + txtAddress.Text + "&licence=" + licence.ToString());
+                    }
+ 
                 }
                 else
                 {

@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Services;
+using System.Web.UI.WebControls;
 using PD01_Parker_Johnson.App_Code.DAL;
 
 
@@ -33,24 +34,24 @@ namespace PD01_Parker_Johnson
         public string licenceInfo(string UserEmail, DateTime UserDOB, string UserAddress, string UserLicenceType, DateTime UserExpiry)
         {
 
-            OleDbConnection infoConn = openConnection();
+                OleDbConnection infoConn = openConnection();
 
-            string licenceSQL = "UPDATE Users SET UserDOB = '" + UserDOB + "', UserAddress = '" + UserAddress + "', LicenceType = '" + UserLicenceType + "', UserExpiry = '" + UserExpiry + "'" +
-                " WHERE UserEmail = '" + UserEmail + "';";
+                string licenceSQL = "UPDATE Users SET UserDOB = '" + UserDOB + "', UserAddress = '" + UserAddress + "', LicenceType = '" + UserLicenceType + "', UserExpiry = '" + UserExpiry + "'" +
+                    " WHERE UserEmail = '" + UserEmail + "';";
 
 
-            OleDbCommand cmd = new OleDbCommand(licenceSQL, infoConn);
+                OleDbCommand cmd = new OleDbCommand(licenceSQL, infoConn);
 
-            cmd.ExecuteNonQuery();
-            cmd.CommandText = "SELECT @@IDENTITY";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "SELECT @@IDENTITY";
 
-            cmd.ExecuteScalar();
-            infoConn.Close();
-            return UserEmail;
-
+                cmd.ExecuteScalar();
+                infoConn.Close();
+                return UserEmail;
+            
         }
 
-        public static OleDbConnection openConnection()
+        public  OleDbConnection openConnection()
         {
             String dbconn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " + HostingEnvironment.MapPath("~/App_Data/UlsterFly1.accdb");
 
@@ -65,5 +66,26 @@ namespace PD01_Parker_Johnson
                 return null;
             }
         }
+
+        public bool licenceExists(string UserEmail)
+        {
+            OleDbConnection licenceConn = openConnection();
+
+            if(licenceConn != null)
+            {
+                string licenceSQL = "SELECT COUNT(*) FROM Users WHERE UserEmail = '" + UserEmail + "'";
+                OleDbCommand cmd = new OleDbCommand (licenceSQL, licenceConn);
+                
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                licenceConn.Close();
+
+                return count > -1;
+
+            } else
+            {
+                return false;
+            }
+        }
+
     }
 }
