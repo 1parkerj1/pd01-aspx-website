@@ -31,11 +31,6 @@
     }
 }
 
-.nav-fix {
-    
-}
-
-
 
 
 /* NAV/FOOTER STYLING */
@@ -112,6 +107,38 @@
     color: white;
 }
 
+p {
+    font-family: monospace;
+    color: white;
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+    font-family: monospace;
+}
+
+h3 {
+    font-weight: bold;
+    color: white;
+    font-family: monospace;
+}
+
+h4 {
+    font-weight: bold;
+    color: white;
+    font-family: monospace;
+}
+
+h6 {
+    color:white;
+    font-family: monospace;
+}
+
+li {
+    font-size: large;
+}
+
 /* LOGIN PAGE */
 
 .login {
@@ -167,3 +194,151 @@
         font-family: monospace;
         color: white;
     }
+
+/* INDEX PAGE */
+
+.weatherWrapper {
+    font-family: monospace;
+    color: white;
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 50%;
+    height: fit-content;
+}
+
+.mapImage {
+
+}
+
+@media only screen and (max-width: 377px) {
+    .mapImage {
+       
+    }
+}
+
+
+/* LICENSE PAGE */
+
+.table {
+    font-family: monospace;
+    font-size: 1em;
+    text-align: left;
+    width: 100%;
+    border: 2px solid black;
+    margin: 1% auto 1% auto;
+    background-color: #F7F0BE
+}
+
+
+.smolul {
+    display: block;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.bigul {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+
+}
+
+.link{
+    color: white;
+} 
+    .link:hover {
+      color:white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .link:visited {
+        color:white;
+    }
+
+.content {
+    width: 50%;
+    margin: 1% auto 1% auto;
+    display: block;
+    text-align: center;
+    align-content: center; 
+}
+
+.typeLabel {
+    font-family: monospace;
+    color: white;
+}
+
+@media only screen and (max-width: 991px) {
+    .table {
+        font-size: 0.7em;
+    }
+
+    .content {
+        width: 75%;
+    }
+
+    .smolul {
+        width: 75%
+    }
+}
+
+@media only screen and (max-width: 377px) {
+    .table {
+        font-size: 0.5em;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .smolul {
+        width: 100%
+    }
+}
+
+/* TACKLE TIPS */
+
+.fix {
+    text-align: left;
+}
+
+.new {
+    margin-top: 5%;
+}
+
+.list {
+    font-family:monospace;
+    color: white;
+    font-size: medium;
+}
+
+.link1 {
+    color: white;
+}
+
+    .lin1k:hover {
+        color: white;
+        cursor: pointer;
+        font-weight: 100;
+    }
+
+    .link1:visited {
+        color: white;
+    }
+
+/* ADMIN PAGE */
+
+.gridview {
+    align-content: center;
+}
+

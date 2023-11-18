@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OpenWeatherMap.Standard, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenWeatherMap.Standard.2.0.0\lib\netstandard2.0\OpenWeatherMap.Standard.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,22 +71,75 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\UlsterFly1.accdb" />
+    <Content Include="Images\.jpg" />
+    <Content Include="Images\119.jpg" />
+    <Content Include="Images\Ballykeel.jpg" />
+    <Content Include="Images\Bantry.jpg" />
+    <Content Include="Images\blood.jpg" />
+    <Content Include="Images\costa.jpg" />
+    <Content Include="Images\flynet.jpg" />
+    <Content Include="Images\gink-fly-floatant.jpg" />
+    <Content Include="Images\hopper.jpg" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\longleg.jpg" />
+    <Content Include="Images\LoughErne.jpg" />
+    <Content Include="Images\map.jpg" />
+    <Content Include="Images\Stoneyford.jpg" />
+    <Content Include="LicenceInfo.asmx" />
+    <Content Include="LicencePage\LicenceView.aspx" />
+    <Content Include="SecurePages\Admin.aspx" />
     <Content Include="Styles\layout.css" />
+    <Content Include="LicencePage\Web.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhost\LicenceInfo.disco" />
     <Content Include="Web.config" />
     <Content Include="WebPages\Index.aspx" />
+    <Content Include="WebPages\Licenses.aspx" />
     <Content Include="WebPages\Login.aspx" />
+    <Content Include="WebPages\Register.aspx" />
+    <Content Include="WebPages\Tackle Tips.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\BLL\User.cs" />
     <Compile Include="App_Code\DAL\DataAccess.cs" />
+    <Compile Include="LicenceInfo.asmx.cs">
+      <DependentUpon>LicenceInfo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LicencePage\LicenceView.aspx.cs">
+      <DependentUpon>LicenceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LicencePage\LicenceView.aspx.designer.cs">
+      <DependentUpon>LicenceView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SecurePages\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecurePages\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UlsterFly.Master.cs">
       <DependentUpon>UlsterFly.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UlsterFly.Master.designer.cs">
       <DependentUpon>UlsterFly.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="WebPages\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -92,6 +148,13 @@
     <Compile Include="WebPages\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebPages\Licenses.aspx.cs">
+      <DependentUpon>Licenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\Licenses.aspx.designer.cs">
+      <DependentUpon>Licenses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebPages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,10 +162,31 @@
     <Compile Include="WebPages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebPages\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebPages\Tackle Tips.aspx.cs">
+      <DependentUpon>Tackle Tips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPages\Tackle Tips.aspx.designer.cs">
+      <DependentUpon>Tackle Tips.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="UlsterFly.Master" />
+    <Content Include="SecurePages\Web.config" />
+    <None Include="Web References\localhost\LicenceInfo.wsdl" />
+    <Content Include="Web References\localhost\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,7 +196,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminPages\" />
-    <Folder Include="SecurePages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://localhost:44330/LicenceInfo.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhost\</RelPath>
+      <UpdateFromURL>https://localhost:44330/LicenceInfo.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>PD01_Parker_Johnson_localhost_LicenceInfo</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

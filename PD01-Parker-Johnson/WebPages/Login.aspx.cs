@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PD01_Parker_Johnson.App_Code.BLL;
@@ -14,9 +16,6 @@ namespace PD01_Parker_Johnson.WebPages
         {
             if(!IsPostBack) 
             { 
-
-                TextBox txtUserEmail = Login1.FindControl("UserName") as TextBox;
-                TextBox txtPassword = Login1.FindControl("Password") as TextBox;
 
                 if (Request.Cookies["rememberMe"] != null)
                 {
@@ -32,37 +31,70 @@ namespace PD01_Parker_Johnson.WebPages
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            TextBox txtUserEmail = Login1.FindControl("txtUserEmail") as TextBox;
-            TextBox txtPassword = Login1.FindControl("txtPassword") as TextBox;
-            CheckBox RememberMe = Login1.FindControl("RememberMe") as CheckBox;
 
             string email = txtUserEmail.Text;
             string pass = txtPassword.Text;
 
             User user = new User();
-            User auth = user.loginUser(email, pass);
+            bool emailExists = user.emailValidate(email);
 
-            if (auth != null)
+            if (!emailExists)
             {
-                if(RememberMe.Checked)
-                {
-                    HttpCookie rememberMe = new HttpCookie("rememberMe");
-
-                    rememberMe["UserEmail"] = email;
-                    rememberMe["UserPass"] = pass;
-
-                    rememberMe.Expires = DateTime.Now.AddMonths(1);
-                    Response.Cookies.Add(rememberMe);
-                }
-                else
-                {
-                }
-
-                Response.Redirect("~/WebPages/Index.aspx");
+                lblFail.Text = "No account with the email: " + email.ToString();
+                lblFail.Visible = true;
             }
             else
             {
+                if(validateEmail(email))
+                {
+                    User auth = user.loginUser(email, pass);
 
+
+                    if (auth != null)
+                    {
+                        bool validateUser = user.userValidate(email, pass);
+                        if (validateUser)
+                        {
+                            if (RememberMe.Checked)
+                            {
+                                HttpCookie rememberMe = new HttpCookie("rememberMe");
+
+                                rememberMe["UserEmail"] = email;
+                                rememberMe["UserPass"] = pass;
+
+                                rememberMe.Expires = DateTime.Now.AddMonths(1);
+                                Response.Cookies.Add(rememberMe);
+                            }
+
+                            else
+                            {
+                                
+                            }
+
+                            FormsAuthentication.RedirectFromLoginPage(email, true);
+                            Response.Redirect("~/WebPages/Index.aspx");
+                        }
+                    }
+                    else
+                    {
+                        lblFail.Text = "Password incorrect";
+                        lblFail.Visible = true;
+                    }
+                }
+                
+            }
+
+        }
+        static bool validateEmail(string email)
+        {
+            try
+            {
+                MailAddress mail = new MailAddress(email);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
             }
         }
     }

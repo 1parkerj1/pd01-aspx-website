@@ -12,11 +12,10 @@ namespace PD01_Parker_Johnson
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Page.MaintainScrollPositionOnPostBack = true;
 
             if (!IsPostBack)
             {
-                adminElement.Visible = HttpContext.Current.User.Identity.Name.Equals("admin");
+                adminElement.Visible = HttpContext.Current.User.Identity.Name.Equals("admin@ulsterfly.com");
 
                 if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {

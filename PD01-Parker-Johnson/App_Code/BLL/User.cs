@@ -11,10 +11,13 @@ namespace PD01_Parker_Johnson.App_Code.BLL
     public class User
     {
 
-        private int UserID, UserAge;
-        private string UserName, UserPass, UserEmail, UserPhone, UserLicense;
+        private int UserID;
+        private string UserName, UserPass, UserEmail, UserLicenseType;
+        private DateTime userDOB;
 
-        public User(){ }
+        public User() { }
+
+        // getters and setters for each class variable
 
         public void setUserID(int UserID)
         {
@@ -23,7 +26,7 @@ namespace PD01_Parker_Johnson.App_Code.BLL
         public int getUserID()
         {
             return this.UserID;
-        } 
+        }
 
         public void setUserName(string UserName)
         {
@@ -38,7 +41,7 @@ namespace PD01_Parker_Johnson.App_Code.BLL
         {
             this.UserPass = UserPass;
         }
-        public string getUserPass() 
+        public string getUserPass()
         {
             return this.UserPass;
         }
@@ -52,60 +55,64 @@ namespace PD01_Parker_Johnson.App_Code.BLL
             return this.UserEmail;
         }
 
-        public void setUserPhone(string UserPhone)
-        {
-            this.UserPhone = UserPhone;
-        }
-        public string getUserPhone() 
-        { 
-            return this.UserPhone; 
-        }
-
         public void setUserLicense(string UserLicense)
         {
-            this.UserLicense = UserLicense;
+            this.UserLicenseType = UserLicense;
         }
         public string getUserLicense()
         {
-            return this.UserLicense;
+            return this.UserLicenseType;
         }
 
-        public void setUserAge(int UserAge)
+        public void setUserDOB(DateTime userDOB)
         {
-            this.UserAge = UserAge;
+            this.userDOB = userDOB;
         }
-        public int getUserAge()
+        public DateTime getUserDOB()
         {
-            return (int) this.UserAge;
+            return this.userDOB;
         }
 
-        public void newUser()
+        // uses dal method for new user
+        public void newUser(string UserEmail, string UserName, string UserPass)
         {
             // call data access method to create a new user
             // the userID from the database is used for the object
 
-            this.UserID = DataAccess.DALuserReg(this.UserEmail, this.UserName, this.UserPass);
+            this.UserID = DataAccess.DALuserReg(UserEmail, UserName, UserPass);
         }
-
+        // Method to remove a user using DataAccess class
         public bool removeUser()
         {
             return DataAccess.DALuserRemove(this.UserID);
         }
 
+        // Method to login a user using DataAccess class
         public User loginUser(string UserEmail, string UserPass)
         {
             User user = DataAccess.DALuserLogin(UserEmail, UserPass);
             return user;
         }
 
-        public void rememberMeCookie(string UserEmail, string UserPass, bool rememberMe)
+        // Method to validate email using DataAccess class
+        public bool emailValidate(string Email)
         {
-            if(rememberMe)
-            {
-                
-            }
+            DataAccess da = new DataAccess();
+            return da.DALemailValidate(Email);
         }
 
+        // Method to add license information
+        public void addLicenceInfo(string UserEmail, DateTime UserDOB, string UserAddress, string UserLicenceType, DateTime UserExpiry)
+        {
+            LicenceInfo licence = new LicenceInfo();
+            licence.licenceInfo(UserEmail, UserDOB, UserAddress, UserLicenceType, UserExpiry);
+        }
 
+        // Method to validate user using DataAccess class
+        public bool userValidate(string UserEmail, string UserPass)
+        {
+            DataAccess da = new DataAccess();
+            return da.DALuserValidate(UserEmail, UserPass);
+        }
     }
 }
