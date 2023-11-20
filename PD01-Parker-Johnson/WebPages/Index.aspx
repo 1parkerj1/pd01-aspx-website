@@ -62,7 +62,7 @@
                             <tr>
                                 <td align="left" colspan="2" class="">
                                     <p style="font-size: 1em;">
-                                        Forecast:
+                                        Wind Speed:
                                         <asp:Label ID="lblForecast" runat="server"></asp:Label>
                                     </p>
 

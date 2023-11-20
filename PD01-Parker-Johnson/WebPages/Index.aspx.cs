@@ -28,6 +28,7 @@ namespace PD01_Parker_Johnson.WebPages
             try
             {
                 Current currentWeather = new Current("586eb32c176b4a4331afaffa224b3c14", WeatherUnits.Metric);
+                
 
                 WeatherData data = await currentWeather.GetWeatherDataByCityName(city);
                 ForecastData forecastData = await currentWeather.GetForecastDataByCityNameAsync(city);
@@ -37,9 +38,10 @@ namespace PD01_Parker_Johnson.WebPages
 
                 lblCity.Text = city + " On: " + date;
 
-                lblTemp.Text = $"{data.WeatherDayInfo.Temperature} °C"
-                //lblForecast.Text = $"{data.Precipitation}";
-                lblForecast.Text = forecastData.WeatherData.ToString();
+                lblTemp.Text = $"{data.WeatherDayInfo.Temperature} °C";
+                //lblForecast.Text = $"{data.Wind.Speed}";
+                lblForecast.Text = $"{data.Rain.LastHour}";
+                //lblForecast.Text = forecastData.WeatherData.ToString();
 
                 lblFail.Text = ""; // Clear the failure message if successful
             }
