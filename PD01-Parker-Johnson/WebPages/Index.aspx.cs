@@ -3,10 +3,15 @@ using OpenWeatherMap.Standard.Enums;
 using OpenWeatherMap.Standard.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
+using PD01_Parker_Johnson.App_Code.BLL;
+using System.Net.Http;
 
 namespace PD01_Parker_Johnson.WebPages
 {
@@ -15,8 +20,8 @@ namespace PD01_Parker_Johnson.WebPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            
+
+
         }
         protected async void weather(string city)
         {
@@ -25,16 +30,16 @@ namespace PD01_Parker_Johnson.WebPages
                 Current currentWeather = new Current("586eb32c176b4a4331afaffa224b3c14", WeatherUnits.Metric);
 
                 WeatherData data = await currentWeather.GetWeatherDataByCityName(city);
+                ForecastData forecastData = await currentWeather.GetForecastDataByCityNameAsync(city);
 
                 string date = data.AcquisitionDateTime.ToString("dd/mm/yyyy");
 
 
                 lblCity.Text = city + " On: " + date;
-                lblTemp.Text = $"{data.WeatherDayInfo.Temperature} °C";
 
-                ForecastData forecastData = await currentWeather.GetForecastDataByCityNameAsync(city);
-
-                lblForecast.Text = data.Precipitation.ToString();
+                lblTemp.Text = $"{data.WeatherDayInfo.Temperature} °C"
+                //lblForecast.Text = $"{data.Precipitation}";
+                lblForecast.Text = forecastData.WeatherData.ToString();
 
                 lblFail.Text = ""; // Clear the failure message if successful
             }
@@ -46,6 +51,8 @@ namespace PD01_Parker_Johnson.WebPages
                 lblForecast.Text = "";
             }
         }
+
+
 
         protected void btnCity_Click(object sender, EventArgs e)
         {
