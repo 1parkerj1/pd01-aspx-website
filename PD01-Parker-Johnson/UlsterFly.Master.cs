@@ -16,9 +16,13 @@ namespace PD01_Parker_Johnson
             if (!IsPostBack)
             {
                 adminElement.Visible = HttpContext.Current.User.Identity.Name.Equals("admin@ulsterfly.com");
-
+                
                 if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
+
+                    lblUsername.Text = "Welcome " + HttpContext.Current.User.Identity.Name;
+
+
                     Login.Text = "Logout";
                     Login.Click += Logout_Click;
                 }

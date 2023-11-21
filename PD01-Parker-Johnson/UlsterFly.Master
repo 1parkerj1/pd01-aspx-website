@@ -60,6 +60,10 @@
 
                                 </ul>
                             </li>
+                            
+                            <li style="" class="nav-item nav-font" visible="True">
+                                <asp:Label ID="lblUsername" CssClass="nav-font" runat="server"></asp:Label>
+                            </li>
 
 
                         </ul>
