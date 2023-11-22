@@ -54,7 +54,7 @@ namespace PD01_Parker_Johnson.App_Code.DAL
             OleDbConnection regConn = openConnection();
 
             // SQL query to insert a new user 
-            string regSQL = "INSERT INTO Users (UserEmail, UserName, UserPass) VALUES('" + UserEmail + "', '" + UserName + "', ' " + UserPass + "')";
+            string regSQL = "INSERT INTO Users (UserEmail, UserName, UserPass) VALUES('" + UserEmail + "', '" + UserName + "', '" + UserPass + "')";
             OleDbCommand cmd = new OleDbCommand(regSQL, regConn);
 
             //cmd.Parameters.AddWithValue("@UserEmail", UserEmail);
@@ -216,7 +216,35 @@ namespace PD01_Parker_Johnson.App_Code.DAL
             return userExists;
         }
 
+        public string DALgetUsername(string UserEmail)
+        {
+            // Open connection
+            OleDbConnection loginConn = openConnection();
+            String name = null;
 
+            if (loginConn != null)
+            {
+                try
+                {
+                    string UserNameSQL = "SELECT UserName FROM Users WHERE UserEmail = '" + UserEmail + "'";
+                    OleDbCommand cmd = new OleDbCommand(UserNameSQL, loginConn);
+
+                    using (OleDbDataReader read = cmd.ExecuteReader())
+                    {
+                        if (read.Read())
+                        {
+                            name = read.GetString(read.GetOrdinal("UserName"));
+                        }
+                    }
+                }
+                finally
+                {
+                    loginConn.Close();
+                }       
+            }
+
+            return name;
+        }
 
     }
 }

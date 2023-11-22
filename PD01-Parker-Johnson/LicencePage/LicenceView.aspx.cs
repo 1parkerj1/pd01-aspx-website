@@ -19,10 +19,10 @@ namespace PD01_Parker_Johnson.WebPages
                 string address = Request.QueryString["address"];
                 string licence = Request.QueryString["licence"];
 
-                DateTime date = DateTime.Now;
+                
 
                 lblAddress.Text = address;
-                lblExpiry.Text = date.ToString("dd/mm/yyyy");
+                lblExpiry.Text = expirydate;
                 lblName.Text = firstname + " " + lastname;
                 lblLicence.Text = licence;
             }

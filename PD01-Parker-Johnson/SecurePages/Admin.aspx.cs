@@ -28,26 +28,37 @@ namespace PD01_Parker_Johnson.SecurePages
         {
             User user = new User();
 
-            // Checks if txtRemove textbox is not empty
-            if (txtRemove.Text != " ")
-            {
-                int userID = Convert.ToInt32(txtRemove.Text);
-                user.setUserID(userID);
-
-                if (userID != 17)
+            try {
+                
+                // Checks if txtRemove textbox is not empty
+                if (txtRemove.Text.Trim() != "")
                 {
-                    // Calls the removeUser method from the User class
-                    user.removeUser();
-                }
+                    int userID = Convert.ToInt32(txtRemove.Text);
+                    user.setUserID(userID);
+
+                    if (userID != 17)
+                    {
+                        // Calls the removeUser method from the User class
+                        user.removeUser();
+                        Response.Redirect("~/SecurePages/Admin.aspx");
+                    }
+                    else
+                    {
+                        lblFail.Visible = true;
+                        lblFail.Text = "cannot remove admin account";
+                    }
+                } 
                 else
                 {
-                    lblFail.Text = "cannot remove admin account";
+                    lblFail.Visible = true;
+                    lblFail.Text = "No Id selected.";
                 }
-            } else
-            {
-                lblFail.Text = "No Id selected.";
-            }
 
+            } catch (Exception ex)
+            {
+                lblFail.Visible = true;
+                lblFail.Text = "Error.";
+            }
         }
     }
 }

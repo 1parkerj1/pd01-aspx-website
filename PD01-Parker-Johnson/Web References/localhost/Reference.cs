@@ -106,22 +106,23 @@ namespace PD01_Parker_Johnson.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/licenceInfo", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string licenceInfo(string UserEmail, string UserDOB, string UserAddress, string UserLicenceType) {
+        public string licenceInfo(string UserEmail, System.DateTime UserDOB, string UserAddress, string UserLicenceType, System.DateTime UserExpiry) {
             object[] results = this.Invoke("licenceInfo", new object[] {
                         UserEmail,
                         UserDOB,
                         UserAddress,
-                        UserLicenceType});
+                        UserLicenceType,
+                        UserExpiry});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void licenceInfoAsync(string UserEmail, string UserDOB, string UserAddress, string UserLicenceType) {
-            this.licenceInfoAsync(UserEmail, UserDOB, UserAddress, UserLicenceType, null);
+        public void licenceInfoAsync(string UserEmail, System.DateTime UserDOB, string UserAddress, string UserLicenceType, System.DateTime UserExpiry) {
+            this.licenceInfoAsync(UserEmail, UserDOB, UserAddress, UserLicenceType, UserExpiry, null);
         }
         
         /// <remarks/>
-        public void licenceInfoAsync(string UserEmail, string UserDOB, string UserAddress, string UserLicenceType, object userState) {
+        public void licenceInfoAsync(string UserEmail, System.DateTime UserDOB, string UserAddress, string UserLicenceType, System.DateTime UserExpiry, object userState) {
             if ((this.licenceInfoOperationCompleted == null)) {
                 this.licenceInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnlicenceInfoOperationCompleted);
             }
@@ -129,7 +130,8 @@ namespace PD01_Parker_Johnson.localhost {
                         UserEmail,
                         UserDOB,
                         UserAddress,
-                        UserLicenceType}, this.licenceInfoOperationCompleted, userState);
+                        UserLicenceType,
+                        UserExpiry}, this.licenceInfoOperationCompleted, userState);
         }
         
         private void OnlicenceInfoOperationCompleted(object arg) {

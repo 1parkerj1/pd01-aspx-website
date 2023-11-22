@@ -187,10 +187,10 @@
     <Content Include="UlsterFly.Master" />
     <Content Include="SecurePages\Web.config" />
     <None Include="Web References\localhost\LicenceInfo.wsdl" />
-    <Content Include="Web References\localhost\Reference.map">
+    <None Include="Web References\localhost\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -25,13 +25,17 @@ namespace PD01_Parker_Johnson.WebPages
                     txtUserEmail.Text = cookieEmail;
                     txtPassword.Text = cookiePass;
                 }
+                else
+                {
+                    FormsAuthentication.SignOut();
+                    Response.Redirect("~/WebPages/Login.aspx");
+                }
 
             }
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-
             string email = txtUserEmail.Text;
             string pass = txtPassword.Text;
 

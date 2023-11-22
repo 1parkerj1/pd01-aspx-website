@@ -7,7 +7,7 @@
     <div class="container-fluid page-background">
         <div class="content">
             <h1 class="pt-4">Ulster Fly</h1>
-            <h3 class="pt-4">Fly Fishing - Northern Ireland</h3>
+            <h3 class="pt-4">Fly Fishing - Northern Ireland - Home</h3>
 
             <div class="row">
                 <div class="col-md-6" style="height: fit-content;">

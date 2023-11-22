@@ -40,15 +40,15 @@
 
 
                             <li class="nav-item nav-font">
-                                <a class="nav-link" href="~/WebPages/Licenses.aspx" runat="server">Licences</a>
+                                <a class="nav-link" href="~/WebPages/Licenses.aspx" runat="server" CausesValidation = "false">Licences</a>
                             </li>
 
                             <li class="nav-item nav-font">
-                                <a class="nav-link" href="~/WebPages/Tackle Tips.aspx" runat="server">Tackle Tips</a>
+                                <a class="nav-link" href="~/WebPages/Tackle Tips.aspx" runat="server" CausesValidation = "false">Tackle Tips</a>
                             </li>
 
                             <li class="nav-item nav-font">
-                                <asp:LinkButton id="Login" class="nav-link" runat="server" OnClick="Login_Click">Login</asp:LinkButton>
+                                <asp:LinkButton id="Login" class="nav-link" runat="server" OnClick="Login_Click" CausesValidation = "false">Login</asp:LinkButton>
                             </li>
 
                             <li id="adminElement" class="nav-item dropdown nav-font" runat="server">
@@ -62,7 +62,7 @@
                             </li>
                             
                             <li style="" class="nav-item nav-font" visible="True">
-                                <asp:Label ID="lblUsername" CssClass="nav-font" runat="server"></asp:Label>
+                                <asp:Label ID="lblUsername" CssClass="nav-font nav-link" runat="server"></asp:Label>
                             </li>
 
 

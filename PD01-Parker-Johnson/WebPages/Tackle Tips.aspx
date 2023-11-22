@@ -124,12 +124,12 @@
                 </div>
 
                 <div class="row new">
-                    <a class="link1" href="https://www.troutflies.co.uk/seasonal-trout-flies">
+                    <a class="link1" target=”_blank” href="https://www.troutflies.co.uk/seasonal-trout-flies">
                         <h4>Purchase Flies based on season here.</h4>
                     </a>
                 </div>
                 <div class="row">
-                    <a class="link1" href="https://www.sportfish.co.uk/fly-fishing-tackle.html">
+                    <a class="link1" target=”_blank” href="https://www.sportfish.co.uk/fly-fishing-tackle.html">
                         <h4>Other Tackle and Fly Fishing products here.</h4>
                     </a>
                 </div>

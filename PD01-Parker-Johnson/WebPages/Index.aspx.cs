@@ -9,9 +9,8 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Newtonsoft.Json;
 using PD01_Parker_Johnson.App_Code.BLL;
-using System.Net.Http;
+
 
 namespace PD01_Parker_Johnson.WebPages
 {
@@ -31,26 +30,31 @@ namespace PD01_Parker_Johnson.WebPages
                 
 
                 WeatherData data = await currentWeather.GetWeatherDataByCityName(city);
-                ForecastData forecastData = await currentWeather.GetForecastDataByCityNameAsync(city);
 
-                string date = data.AcquisitionDateTime.ToString("dd/mm/yyyy");
+
+                string date = DateTime.Now.ToString();
 
 
                 lblCity.Text = city + " On: " + date;
-
                 lblTemp.Text = $"{data.WeatherDayInfo.Temperature} °C";
-                //lblForecast.Text = $"{data.Wind.Speed}";
-                lblForecast.Text = $"{data.Rain.LastHour}";
+                lblForecast.Text = $"{data.Wind.Speed} m/s";
+
+                ForecastData forecastData = await currentWeather.GetForecastDataByCityNameAsync(city);
+
+                
+
+                //lblForecast.Text = $"{data.Rain.LastHour}";
                 //lblForecast.Text = forecastData.WeatherData.ToString();
 
                 lblFail.Text = ""; // Clear the failure message if successful
             }
             catch (Exception ex)
             {
-                lblFail.Text = "Unfortunately, the city does not exist or the data is not available.";
+                lblFail.Text = "Unfortunately, the city does not exist or the data is not available. ";
                 lblCity.Text = "";
                 lblTemp.Text = "";
                 lblForecast.Text = "";
+
             }
         }
 

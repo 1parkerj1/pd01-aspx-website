@@ -34,24 +34,24 @@ namespace PD01_Parker_Johnson
         public string licenceInfo(string UserEmail, DateTime UserDOB, string UserAddress, string UserLicenceType, DateTime UserExpiry)
         {
 
-                OleDbConnection infoConn = openConnection();
+            OleDbConnection infoConn = openConnection();
 
-                string licenceSQL = "UPDATE Users SET UserDOB = '" + UserDOB + "', UserAddress = '" + UserAddress + "', LicenceType = '" + UserLicenceType + "', UserExpiry = '" + UserExpiry + "'" +
-                    " WHERE UserEmail = '" + UserEmail + "';";
+            string licenceSQL = "UPDATE Users SET UserDOB = '" + UserDOB + "', UserAddress = '" + UserAddress + "', LicenceType = '" + UserLicenceType + "', UserExpiry = '" + UserExpiry + "'" +
+                " WHERE UserEmail = '" + UserEmail + "';";
 
 
-                OleDbCommand cmd = new OleDbCommand(licenceSQL, infoConn);
+            OleDbCommand cmd = new OleDbCommand(licenceSQL, infoConn);
 
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "SELECT @@IDENTITY";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "SELECT @@IDENTITY";
 
-                cmd.ExecuteScalar();
-                infoConn.Close();
-                return UserEmail;
-            
+            cmd.ExecuteScalar();
+            infoConn.Close();
+            return UserEmail;
+
         }
 
-        public  OleDbConnection openConnection()
+        public OleDbConnection openConnection()
         {
             String dbconn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source= " + HostingEnvironment.MapPath("~/App_Data/UlsterFly1.accdb");
 
@@ -70,23 +70,35 @@ namespace PD01_Parker_Johnson
         public bool licenceExists(string UserEmail)
         {
             OleDbConnection licenceConn = openConnection();
+            bool userExists = false;
+            string licencetype = null;
 
-            if(licenceConn != null)
+            if (licenceConn != null)
             {
-                string licenceSQL = "SELECT COUNT(*) FROM Users WHERE UserEmail = '" + UserEmail + "'";
-                OleDbCommand cmd = new OleDbCommand (licenceSQL, licenceConn);
-                
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-                licenceConn.Close();
+                try
+                {
+                    // SQL query to check if user exists with given email and password
+                    string licenceSQL = "SELECT * FROM Users WHERE UserEmail = '" + UserEmail + "'";
+                    OleDbCommand cmd = new OleDbCommand(licenceSQL, licenceConn);
+                    OleDbDataReader reader = cmd.ExecuteReader();
 
-                return count > -1;
-
-            } else
-            {
-                return false;
+                    while(reader.Read())
+                    {
+                        licencetype = reader["LicenceType"].ToString();
+                    }
+                }
+                finally
+                {
+                    licenceConn.Close();
+                }
             }
+
+            if (licencetype == null)
+            {
+                userExists = true;
+            }
+
+            return userExists;
         }
-
-
     }
 }

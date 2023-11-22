@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PD01_Parker_Johnson.App_Code.BLL;
 
 namespace PD01_Parker_Johnson
 {
@@ -15,13 +16,14 @@ namespace PD01_Parker_Johnson
 
             if (!IsPostBack)
             {
+                 
                 adminElement.Visible = HttpContext.Current.User.Identity.Name.Equals("admin@ulsterfly.com");
                 
                 if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
-
-                    lblUsername.Text = "Welcome " + HttpContext.Current.User.Identity.Name;
-
+                    User user = new User();
+                    string username = user.userName(HttpContext.Current.User.Identity.Name);
+                    lblUsername.Text = "Hello: " + username;
 
                     Login.Text = "Logout";
                     Login.Click += Logout_Click;
@@ -48,8 +50,7 @@ namespace PD01_Parker_Johnson
         }
         protected void Logout_Click(object sender, EventArgs e)
         {
-            FormsAuthentication.SignOut();
-            Response.Redirect("~/WebPages/Index.aspx");
+            ;
         }
     }
 }

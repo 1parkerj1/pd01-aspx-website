@@ -16,9 +16,10 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="UserEmail" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="UserDOB" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserDOB" type="s:dateTime" />
             <s:element minOccurs="0" maxOccurs="1" name="UserAddress" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="UserLicenceType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserExpiry" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>

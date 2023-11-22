@@ -13,7 +13,7 @@
 
             <h3 class="new mb-3">All Users:</h3>
 
-            <asp:Label class="login-font" runat="server">Remove User: </asp:Label> &nbsp;
+            <asp:Label class="login-font" runat="server">Remove User (enter id or select user): </asp:Label> &nbsp;
             <asp:TextBox class="login-form" runat="server" ID="txtRemove"></asp:TextBox>&nbsp;
             <asp:Button class="login-btn" runat="server" ID="btnRemoveUser" Text="Remove" OnClick="btnRemoveUser_Click" /> &nbsp;
             <asp:Label class="login-font" runat="server" ID="lblFail" Visible="False" style="color: crimson;"></asp:Label>

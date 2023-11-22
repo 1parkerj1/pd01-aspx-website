@@ -71,7 +71,7 @@
                 DAERA Fishery Protection Officers do carry out licence checks so make sure all rod<br />licences and permits are valid.
                 If it is found that the information received is incorrect, DAERA  will cancel the licence and<br />
                 offer the holder the opportunity to buy a non concessionary rod licence/ permit.<br />
-                No refund will be given.  For more information visit <a class="link" href="https://www.nidirect.gov.uk/articles/have-proof-show-youre-fishing-legally">'Have proof to show you're fishing legally'</a>.
+                No refund will be given.  For more information visit <a class="link" target=”_blank” href="https://www.nidirect.gov.uk/articles/have-proof-show-youre-fishing-legally">'Have proof to show you're fishing legally'</a>.
             </p>
 
 
@@ -100,18 +100,18 @@
                         </td>
 
                         <td align="center">
-                            <asp:TextBox ID="txtFname" CssClass="login-form mb-2" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtFname" CssClass="login-form mb-2" runat="server" MaxLength="50"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtFname" ErrorMessage="First Name is required." ToolTip="First Name is required." Style="color: crimson;">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
 
                     <tr>
                         <td align="center">
-                            <asp:Label ID="lblSname" CssClass="mb-2 login-font" runat="server" AssociatedControlID="txtSname">Second Name:</asp:Label>
+                            <asp:Label ID="lblSname" CssClass="mb-2 login-font" runat="server" AssociatedControlID="txtSname" >Second Name:</asp:Label>
                         </td>
 
                         <td align="center">
-                            <asp:TextBox ID="txtSname" CssClass="login-form mb-2" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtSname" CssClass="login-form mb-2" runat="server" MaxLength="50"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSname" ErrorMessage="Second Name is required." ToolTip="Second Name is required." Style="color: crimson;">*</asp:RequiredFieldValidator>
                         </td>
                     </tr>
@@ -158,7 +158,7 @@
                     <tr>
                         <td align="center" colspan="2" class="mb-2">
                             <asp:DropDownList ID="ddlDay" CssClass="login-form mb-1" runat="server"></asp:DropDownList>
-                            <asp:DropDownList ID="ddlMonth" CssClass="login-form mb-1" runat="server"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlMonth" CssClass="login-form mb-1" runat="server" AutoPostBack="true"></asp:DropDownList>
                             <asp:DropDownList ID="ddlYear" CssClass="login-form mb-1" runat="server"></asp:DropDownList> &nbsp;
                             <asp:Button ID="ddlUpdate" CssClass="login-btn mb-2" runat="server" OnClick="ddlUpdate_Click" Text="add date" Width="85px" />
                         </td>

@@ -120,5 +120,13 @@ namespace PD01_Parker_Johnson.App_Code.BLL
             LicenceInfo licence = new LicenceInfo();
             return licence.licenceExists(UserEmail);
         }
+
+        public string userName(string UserEmail)
+        {
+            DataAccess DALname = new DataAccess();
+            return DALname.DALgetUsername(UserEmail);
+
+
+        }
     }
 }

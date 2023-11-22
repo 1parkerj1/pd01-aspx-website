@@ -16,16 +16,23 @@ namespace PD01_Parker_Johnson.WebPages
         {
             if (!IsPostBack)
             {
-                // code to fill fthe drop downs for the user dob
-                for (int i = 1; i <= 31; i++)
-                {
-                    ddlDay.Items.Add(new ListItem(i.ToString(), i.ToString()));
-                }
-
                 string[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
                 for (int i = 0; i < months.Length; i++)
                 {
                     ddlMonth.Items.Add(new ListItem(months[i], (i + 1).ToString()));
+                }
+
+                int monthsFix = 31;
+
+                if (ddlMonth.SelectedItem.Equals("February"))
+                {
+                    monthsFix = 28;
+                }
+
+                // code to fill fthe drop downs for the user dob
+                for (int i = 1; i <= monthsFix; i++)
+                {
+                    ddlDay.Items.Add(new ListItem(i.ToString(), i.ToString()));
                 }
 
 
@@ -39,8 +46,8 @@ namespace PD01_Parker_Johnson.WebPages
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
 
@@ -50,19 +57,20 @@ namespace PD01_Parker_Johnson.WebPages
             int day = int.Parse(ddlDay.SelectedValue);
             int month = int.Parse(ddlMonth.SelectedValue);
             int year = int.Parse(ddlYear.SelectedValue);
-            DateTime today = DateTime.UtcNow.Date;
-            lblSname.Text = today.ToString();
-            DateTime nextYear = today.AddYears(1);
 
             //using todays date and 1 year to make the expiry date 1 year
-            DateTime expiry = nextYear;
+            DateTime today = DateTime.Now;
+            DateTime expiryDate = today.AddYears(1);
+            string expiryDateString = expiryDate.ToString("ddd/mm/yyyy");
+
             // date of birth
             DateTime DOB = new DateTime(year, month, day);
+
             // email, address, licence from the txt boxs
             string email = txtEmail.Text;
             string address = txtAddress.Text;
             string licence = lblLicenceType.Text;
-            
+
             User user = new User();
             bool emailExists = user.emailValidate(email);
 
@@ -71,23 +79,23 @@ namespace PD01_Parker_Johnson.WebPages
                 lblFail.Text = "Email doesn't exist. Create an account.";
             }
             else
-            {   
+            {
                 // validate email method to checkif the email has correct format
                 if (validateEmail(email))
                 {
-                    if(user.licenceExits(email))
+                    if (user.licenceExits(email))
                     {
                         lblFail.Text = "Licence With this email already exists";
                     }
-                    else 
+                    else
                     {
                         // add info to database using dataaccess method
-                        user.addLicenceInfo(email, DOB, address, licence, expiry);
+                        user.addLicenceInfo(email, DOB, address, licence, expiryDate);
 
                         // query string to transfer data to the liucence view page
-                        Response.Redirect("~/LicencePage/LicenceView.aspx?firstname=" + txtFname.Text + "&lastname=" + txtSname.Text + "&expirydate=" + nextYear.ToString() + "&address=" + txtAddress.Text + "&licence=" + licence.ToString());
+                        Response.Redirect("~/LicencePage/LicenceView.aspx?firstname=" + txtFname.Text + "&lastname=" + txtSname.Text + "&expirydate=" + Server.UrlEncode(expiryDateString) + "&address=" + txtAddress.Text + "&licence=" + licence.ToString());
                     }
- 
+
                 }
                 else
                 {
@@ -96,8 +104,29 @@ namespace PD01_Parker_Johnson.WebPages
             }
         }
 
+        //    if (!emailExists)
+        //    {
+        //        lblFail.Text = "Email doesn't exist. Create an account.";
+        //    }
+        //    else
+        //    {   // validate email method to checkif the email has correct format
+        //        if (validateEmail(email))
+        //        {
+        //            user.addLicenceInfo(email, DOB, address, licence, expiry);
+
+        //            // query string to transfer data to the liucence view page
+        //            Response.Redirect("~/LicencePage/LicenceView.aspx?firstname=" + txtFname.Text + "&lastname=" + txtSname.Text + "&expirydate=" + expiry + "&address=" + txtAddress.Text + "&licence=" + licence.ToString());
+        //        }
+        //        else
+        //        {
+        //            lblFail.Text = "Invalid Email.";
+        //        }
+        //    }
+        //}
+
         protected void ddlUpdate_Click(object sender, EventArgs e)
         {
+
             // adds the dob to the method and then checks the age
             int day = int.Parse(ddlDay.SelectedValue);
             int month = int.Parse(ddlMonth.SelectedValue);
@@ -110,6 +139,7 @@ namespace PD01_Parker_Johnson.WebPages
             int age = Today.Year - DOB.Year;
             string licence = null;
             double price = 0;
+
 
 
             // licence type and price dependant on age using if statements to check 
@@ -142,12 +172,15 @@ namespace PD01_Parker_Johnson.WebPages
             }
 
             if (txtDisabled.Checked)
-            {
-                licence = "Disabled";
-                price = 10.00;
-                lblLicencePrice.Text = "£" + price.ToString();
-                lblLicenceType.Text = licence.ToString();
-            }
+                if (txtDisabled.Checked)
+                {
+                    licence = "Disabled";
+                    price = 10.00;
+                    lblLicencePrice.Text = "£" + price.ToString();
+                    lblLicenceType.Text = licence.ToString();
+                }
+
+
 
         }
         static bool validateEmail(string email)
