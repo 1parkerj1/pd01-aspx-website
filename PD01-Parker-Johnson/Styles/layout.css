@@ -82,12 +82,14 @@
     font-family: monospace;
     font-size: large;
     color: black;
+    text-decoration: none;
+    
 }
-    .foot:hover {
+    .foot-font:hover {
         font-weight: bold;
     }
 
-    .foot:visited {
+    .foot-font:visited {
         font-family: monospace;
         font-size: large;
         color: black;
@@ -153,7 +155,7 @@ li {
 .login-wrapper {
     width: auto;
     padding: 10%;
-    border: 1px solid #001D4A;
+    border: 0px solid #001D4A;
     border-radius: 15px;
 }
 

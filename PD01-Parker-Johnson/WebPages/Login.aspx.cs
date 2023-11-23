@@ -28,7 +28,7 @@ namespace PD01_Parker_Johnson.WebPages
                 else
                 {
                     FormsAuthentication.SignOut();
-                    Response.Redirect("~/WebPages/Login.aspx");
+                    //Response.Redirect("~/WebPages/Login.aspx");
                 }
 
             }

@@ -61,7 +61,7 @@ namespace PD01_Parker_Johnson.WebPages
             //using todays date and 1 year to make the expiry date 1 year
             DateTime today = DateTime.Now;
             DateTime expiryDate = today.AddYears(1);
-            string expiryDateString = expiryDate.ToString("ddd/mm/yyyy");
+            string expiryDateString = expiryDate.ToString("dd/mm/yyyy");
 
             // date of birth
             DateTime DOB = new DateTime(year, month, day);

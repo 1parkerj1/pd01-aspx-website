@@ -27,11 +27,13 @@ namespace PD01_Parker_Johnson
 
                     Login.Text = "Logout";
                     Login.Click += Logout_Click;
+
                 }
                 else
                 {
                     Login.Text = "Login";
                     Login.Click += Login_Click;
+
                 }
             }
         }
